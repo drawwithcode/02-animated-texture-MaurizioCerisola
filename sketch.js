@@ -13,12 +13,9 @@ function setup() {
   createCanvas(windowWidth,windowHeight);
   cols = floor(windowWidth/scl);
   rows = floor(windowHeight/scl);
-
-
 }
 
 function draw() {
-
   background("black");
   var yOff = 0;
   for(var y = 0; y < rows; y++) {
@@ -32,16 +29,18 @@ function draw() {
       // Set weight and color
       let vectLength = sqrt(pow(xVect,2)+pow(yVect,2));
       let maxVectLength = sqrt(2)*scl*5/4;
-      strokeWeight(vectLength/maxVectLength * 5);
-      stroke(lerpColor(color("#d7dd99"), color("#41521f"), vectLength/maxVectLength));
+      strokeWeight(vectLength/maxVectLength * 6);
+      //stroke(lerpColor(color("#ffbd00"), color("#390099"), vectLength/maxVectLength*1.3));
+      stroke(lerpColor(color("#f5cc00"), color("#19647e"), vectLength/maxVectLength*1.3));
       // Print arrow
       arrow(0, 0, xVect, yVect);
       pop();
-      
+
       xOff += inc;
     }
     yOff += inc;
   }
+
 
 }
 
